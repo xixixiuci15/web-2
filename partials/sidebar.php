@@ -2,7 +2,7 @@
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
         <div class="sb-sidenav-menu">
             <div class="nav">
-                <!-- DASHBOARD -->
+               
                 <a class="nav-link" href="dashboard.php">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Dashboard
@@ -10,7 +10,7 @@
 
                 <div class="sb-sidenav-menu-heading">Fitur Utama</div>
 
-                <!-- MANAJEMEN ANGGOTA -->
+               
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseAnggota" aria-expanded="false">
                     <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                     Manajemen Anggota
@@ -33,7 +33,7 @@
                     </nav>
                 </div>
 
-                <!-- PRODUK -->
+                
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseProduk" aria-expanded="false">
                     <div class="sb-nav-link-icon"><i class="fas fa-box"></i></div>
                     Pengelolaan Produk
@@ -47,7 +47,7 @@
                     </nav>
                 </div>
 
-                <!-- PEMESANAN -->
+               
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePemesanan" aria-expanded="false">
                     <div class="sb-nav-link-icon"><i class="fas fa-shopping-cart"></i></div>
                     Pemesanan Produk
@@ -60,7 +60,6 @@
                     </nav>
                 </div>
 
-                <!-- PEMBAYARAN -->
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseTransaksiKeuangan" aria-expanded="false">
                     <div class="sb-nav-link-icon"><i class="fas fa-money-bill-wave"></i></div>
                     Transaksi Keuangan
@@ -77,10 +76,9 @@
         </div>
         <div class="sb-sidenav-footer">
             <div class="small">Login sebagai:</div>
-            Admin Koperasi
+            SUCI RAMADHANI
         </div>
     </nav>
 </div>
-<!-- Bootstrap Bundle + Toggle Sidebar JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../public/js/scripts.js"></script>

@@ -4,16 +4,16 @@ require_once __DIR__ . '/../models/jenis_produk.php';
 use models\JenisProduk;
 
 if (isset($_POST['submit'])) {
-    // Mengambil data dari form dan memasukkannya ke dalam array
+   
     $data = [
         'nama_jenis_produk' => $_POST['nama_jenis_produk'],
         'deskripsi' => $_POST['deskripsi']
     ];
 
-    // Memasukkan data jenis produk baru ke dalam database
+    
     JenisProduk::create($data);
 
-    // Redirect ke halaman list jenis produk setelah data berhasil disimpan
+   
     header("Location: list_jenis_produk.php");
     exit;
 }
@@ -49,17 +49,14 @@ if (isset($_POST['submit'])) {
                         </div>
                         <div class="card-body">
                             <form action="create_jenis_produk.php" method="POST">
-                                <!-- Input Nama Jenis Produk -->
                                 <div class="mb-3">
                                     <label for="nama_jenis_produk" class="form-label">Nama Jenis Produk</label>
                                     <input type="text" class="form-control" name="nama_jenis_produk" id="nama_jenis_produk" required>
                                 </div>
-                                <!-- Input Deskripsi -->
                                 <div class="mb-3">
                                     <label for="deskripsi" class="form-label">Deskripsi</label>
                                     <textarea class="form-control" name="deskripsi" id="deskripsi" rows="4" required></textarea>
                                 </div>
-                                <!-- Tombol untuk kembali dan menyimpan data -->
                                 <a href="list_jenis_produk.php" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Kembali</a>
                                 <button type="submit" name="submit" class="btn btn-primary"><i class="fas fa-save"></i> Simpan</button>
                             </form>

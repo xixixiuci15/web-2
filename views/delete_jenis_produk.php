@@ -9,6 +9,5 @@ if ($id) {
     JenisProduk::delete($id); 
 }
 
-// Redirect ke halaman list produk
 header("Location: list_jenis_produk.php");
 exit;

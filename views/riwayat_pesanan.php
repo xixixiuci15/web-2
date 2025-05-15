@@ -5,7 +5,6 @@ use config\Connection;
 
 $pdo = Connection::make();
 
-// Ambil semua data pesanan beserta nama anggota
 $sql = "SELECT 
             pesanan.id, 
             pesanan.tanggal, 

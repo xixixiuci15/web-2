@@ -5,7 +5,6 @@ use config\Connection;
 
 $pdo = Connection::make();
 
-// Ambil data pesanan yang belum dibayar
 $stmt = $pdo->prepare("SELECT 
                             p.id, 
                             pg.nama AS nama_anggota, 

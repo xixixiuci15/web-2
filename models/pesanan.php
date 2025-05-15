@@ -56,17 +56,14 @@ class Pesanan
     {
         $pdo = Connection::make();
 
-        // Hapus dulu pembayaran yang terkait dengan pesanan ini
         $sqlPembayaran = "DELETE FROM pembayaran WHERE pesanan_id = ?";
         $stmtPembayaran = $pdo->prepare($sqlPembayaran);
         $stmtPembayaran->execute([$id]);
 
-        // Hapus detail pesanan (jika ada relasi)
         $sqlDetail = "DELETE FROM detail_pesanan WHERE pesanan_id = ?";
         $stmtDetail = $pdo->prepare($sqlDetail);
         $stmtDetail->execute([$id]);
 
-        // Hapus pesanan
         $sql = "DELETE FROM pesanan WHERE id = ?";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$id]);

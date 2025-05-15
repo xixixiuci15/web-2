@@ -5,7 +5,6 @@ use config\Connection;
 
 $pdo = Connection::make();
 
-// Ambil data pesanan jika ada ID dikirim
 $pesanan = null;
 $totalBayar = 0;
 
@@ -32,7 +31,6 @@ if (isset($_GET['id'])) {
     }
 }
 
-// Proses simpan pembayaran
 if (isset($_POST['submit'])) {
     $stmt = $pdo->prepare("INSERT INTO pembayaran (pesanan_id, tanggal, jumlah_bayar) VALUES (:pid, :tgl, :jumlah)");
     $stmt->execute([
@@ -41,7 +39,6 @@ if (isset($_POST['submit'])) {
         ':jumlah' => $_POST['jumlah_bayar']
     ]);
 
-    // Update status pesanan jadi Lunas
     $pdo->prepare("UPDATE pesanan SET status_bayar = 1 WHERE id = :id")->execute(['id' => $_POST['pesanan_id']]);
 
     header("Location: list_pembayaran.php");

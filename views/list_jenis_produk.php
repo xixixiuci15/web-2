@@ -6,7 +6,6 @@ use config\Connection;
 $pdo = Connection::make();
 $data = $pdo->query("SELECT * FROM jenis_produk ORDER BY id DESC")->fetchAll(PDO::FETCH_ASSOC);
 
-// Debugging: Cek hasil query
 if (empty($data)) {
     echo "Tidak ada data jenis produk.";
 }

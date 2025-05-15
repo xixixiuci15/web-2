@@ -8,7 +8,6 @@ use models\Anggota;
 if (isset($_POST['submit'])) {
     $pdo = Connection::make();
 
-    // Simpan data pegawai
     $stmt = $pdo->prepare('INSERT INTO pegawai (nip, nama, jenis_kelamin, jabatan) VALUES (:nip, :nama, :jk, :jabatan)');
     $stmt->bindParam(':nip', $_POST['nip']);
     $stmt->bindParam(':nama', $_POST['nama']);

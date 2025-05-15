@@ -2,16 +2,13 @@
 require_once __DIR__ . '/../models/Anggota.php';
 use models\Anggota;
 
-// Cek apakah ID ada di URL
 if (!isset($_GET['id'])) {
     header("Location: list_anggota.php");
     exit;
 }
 
-// Ambil data anggota berdasarkan ID
 $anggota = Anggota::find($_GET['id']);
 
-// Cek jika data anggota tidak ditemukan atau tidak valid
 if (!$anggota || !is_array($anggota)) {
     header("Location: list_anggota.php");
     exit;

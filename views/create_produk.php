@@ -5,14 +5,11 @@ require_once __DIR__ . '/../models/jenis_produk.php';
 use config\Connection;
 use models\JenisProduk;
 
-// Ambil semua jenis produk untuk dropdown
 $jenisProduk = JenisProduk::all();
 
-// Mengecek apakah form telah disubmit
 if (isset($_POST['submit'])) {
     $pdo = Connection::make();
 
-    // Simpan data produk ke database
     $stmt = $pdo->prepare('INSERT INTO produk (nama, deskripsi, harga, stok, jenis_produk_id) 
                            VALUES (:nama, :deskripsi, :harga, :stok, :jenis_produk_id)');
     $stmt->bindParam(':nama', $_POST['nama_produk']);
@@ -22,7 +19,6 @@ if (isset($_POST['submit'])) {
     $stmt->bindParam(':jenis_produk_id', $_POST['jenis_produk_id']);
     $stmt->execute();
 
-    // Redirect ke halaman list produk
     header("Location: list_produk.php");
     exit;
 }
@@ -59,31 +55,22 @@ if (isset($_POST['submit'])) {
                         <div class="card-header"><i class="fas fa-box me-1"></i> Form Tambah Produk</div>
                         <div class="card-body">
                             <form action="create_produk.php" method="POST">
-                                <!-- Nama Produk -->
                                 <div class="mb-3">
                                     <label for="nama_produk" class="form-label">Nama Produk</label>
                                     <input type="text" class="form-control" name="nama_produk" required>
                                 </div>
-
-                                <!-- Deskripsi -->
                                 <div class="mb-3">
                                     <label for="deskripsi" class="form-label">Deskripsi</label>
                                     <textarea name="deskripsi" class="form-control" rows="3" required></textarea>
                                 </div>
-
-                                <!-- Harga -->
                                 <div class="mb-3">
                                     <label for="harga" class="form-label">Harga</label>
                                     <input type="number" class="form-control" name="harga" required>
                                 </div>
-
-                                <!-- Stok -->
                                 <div class="mb-3">
                                     <label for="stok" class="form-label">Stok</label>
                                     <input type="number" class="form-control" name="stok" required>
                                 </div>
-
-                                <!-- Jenis Produk -->
                                 <div class="mb-3">
                                     <label for="jenis_produk_id" class="form-label">Jenis Produk</label>
                                     <select name="jenis_produk_id" class="form-control" required>
@@ -92,8 +79,6 @@ if (isset($_POST['submit'])) {
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
-
-                                <!-- Tombol -->
                                 <a href="list_produk.php" class="btn btn-secondary">
                                     <i class="fas fa-arrow-left"></i> Kembali
                                 </a>

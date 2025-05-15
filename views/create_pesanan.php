@@ -30,7 +30,6 @@ if (isset($_POST['submit'])) {
 
     $pesanan_id = $pdo->lastInsertId();
 
-    // Simpan ke detail_pesanan
     $stmtDetail = $pdo->prepare("INSERT INTO detail_pesanan (pesanan_id, produk_id, jumlah) VALUES (:pid, :prid, :jml)");
     $stmtDetail->execute([
         ':pid' => $pesanan_id,

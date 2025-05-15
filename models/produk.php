@@ -8,7 +8,7 @@ use PDO;
 
 class Produk
 {
-    // Menampilkan semua produk dan nama jenis produk
+
     public static function all()
     {
         $pdo = Connection::make();
@@ -19,7 +19,7 @@ class Produk
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    // Menampilkan satu produk berdasarkan ID
+
     public static function find($id)
     {
         $pdo = Connection::make();

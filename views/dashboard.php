@@ -38,7 +38,6 @@ $jumlahPembayaran = $conn->query("SELECT COUNT(*) as total FROM pembayaran")->fe
                         <li class="breadcrumb-item active">Beranda</li>
                     </ol>
 
-                    <!-- Kartu Ringkasan -->
                     <div class="row mb-4">
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-primary text-white mb-4">
@@ -61,8 +60,6 @@ $jumlahPembayaran = $conn->query("SELECT COUNT(*) as total FROM pembayaran")->fe
                             </div>
                         </div>
                     </div>
-
-                    <!-- Selamat Datang -->
                     <div class="card mb-4">
                         <div class="card-header"><i class="fas fa-info-circle me-1"></i> Selamat datang</div>
                         <div class="card-body">
@@ -77,7 +74,7 @@ $jumlahPembayaran = $conn->query("SELECT COUNT(*) as total FROM pembayaran")->fe
                     </div>
                 </div>
             </main>
-            <?php include_once '../partials/footer.php'; // jika ada 
+            <?php include_once '../partials/footer.php'; 
             ?>
         </div>
     </div>

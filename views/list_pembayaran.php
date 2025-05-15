@@ -56,7 +56,6 @@ $transaksiList = $stmt->fetchAll();
                     </div>
                     <div class="card-body">
                         <table class="table table-bordered table-hover">
-                            <!-- Tambahkan satu kolom "Aksi" di <thead> -->
                             <thead>
                                 <tr>
                                     <th>ID Pesanan</th>

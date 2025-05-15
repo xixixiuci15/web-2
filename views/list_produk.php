@@ -5,7 +5,6 @@ use config\Connection;
 
 $pdo = Connection::make();
 
-// Ambil data produk dan nama jenis produknya
 $sql = "SELECT p.*, jp.nama_jenis_produk 
         FROM produk p 
         JOIN jenis_produk jp ON p.jenis_produk_id = jp.id 

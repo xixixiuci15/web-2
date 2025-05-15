@@ -10,7 +10,6 @@ $stmt = $pdo->prepare("SELECT * FROM pegawai WHERE id = ?");
 $stmt->execute([$id]);
 $pegawai = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// Jika data pegawai tidak ditemukan
 if (!$pegawai) {
     header("Location: list_pegawai.php");
     exit;

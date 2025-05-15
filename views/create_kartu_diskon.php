@@ -6,7 +6,6 @@ use config\Connection;
 if (isset($_POST['submit'])) {
     $pdo = Connection::make();
 
-    // Simpan data kartu diskon
     $stmt = $pdo->prepare('INSERT INTO kartu_diskon (nama, persen_diskon, deskripsi) VALUES (:nama, :persen_diskon, :deskripsi)');
     $stmt->bindParam(':nama', $_POST['nama']);
     $stmt->bindParam(':persen_diskon', $_POST['persen_diskon']);

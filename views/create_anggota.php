@@ -9,12 +9,12 @@ use models\KartuDiskon;
 
 $pdo = Connection::make();
 
-// Ambil pegawai yang belum menjadi anggota
+
 $stmt = $pdo->query("SELECT * FROM pegawai WHERE id NOT IN (SELECT pegawai_id FROM anggota)");
 $pegawaiList = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 if (isset($_POST['submit'])) {
-    // Simpan data anggota dari pegawai yang dipilih
+    
     $dataAnggota = [
         'pegawai_id' => $_POST['pegawai_id'],
         'status_aktif' => $_POST['status_aktif'],
