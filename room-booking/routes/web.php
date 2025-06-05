@@ -15,6 +15,15 @@ use App\Livewire\Pegawai\ListPegawai;
 use App\Livewire\Pegawai\CreatePegawai;
 use App\Livewire\Pegawai\EditPegawai;
 
+//peminjaman
+use App\Livewire\Peminjaman\ListPeminjaman;
+use App\Livewire\Peminjaman\CreatePeminjaman;
+use App\Livewire\Peminjaman\EditPeminjaman;
+
+//Unit-Kerja
+use App\Livewire\UnitKerja\ListUnitKerja;
+use App\Livewire\UnitKerja\CreateUnitKerja;
+use App\Livewire\UnitKerja\EditUnitKerja;
 
 Route::get('/', function () {
     return view('welcome');
@@ -43,3 +52,13 @@ Route::get('/ruang/edit/{ruang}', EditRuang::class)->name('ruang.edit');
 Route::get('/pegawai', ListPegawai::class)->name('Pegawai.index');
 Route::get('/pegawai/create', CreatePegawai::class)->name('Pegawai.create');
 Route::get('/pegawai/edit/{pegawai}', EditPegawai::class)->name('Pegawai.edit');
+
+//Peminjaman
+Route::get('/peminjaman', ListPeminjaman::class)->name('peminjaman.index');
+Route::get('/peminjaman/create', CreatePeminjaman::class)->name('peminjaman.create');
+Route::get('/peminjaman/edit/{peminjaman}', EditPeminjaman::class)->name('peminjaman.edit');
+
+//Unit-Kerja
+Route::get('/unit-kerja', ListUnitKerja::class)->name('unit-kerja.index');
+Route::get('/unit-kerja/create', CreateUnitKerja::class)->name('unit-kerja.create');
+Route::get('/unit-kerja/edit/{unitkerja}', EditUnitKerja::class)->name('unit-kerja.edit');
